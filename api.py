@@ -2,6 +2,14 @@ import myfitnesspal
 import time
 from datetime import datetime
 from nightscout import postCarbsToNightscout 
+from configparser import ConfigParser
+
+# reading config file
+parser = ConfigParser()
+parser.read('configs/config.ini')
+
+
+
 def login(user, pw):
     client = myfitnesspal.Client(user, pw)
     return client
@@ -64,8 +72,14 @@ def carbDiff(old_day, new_day, mealIndex):
 
 def main():
 
-    user = 'elvinutheman@gmail.com'
-    pw = 'testpass'
+    # Myfitnesspal login
+    user = parser.get('api', 'username')
+    pw = parser.get('api', 'password')
+
+    # NightScout Settings
+    api_secret_hashed = parser.get('nightscout', 'api_secret_hashed')
+    token = parser.get('nightscout', 'token')
+    nightScoutUrl = parser.get('nightscout', 'url')
 
     client = login(user, pw)
 
@@ -94,7 +108,7 @@ def main():
         
         print('Carbs Added: ' + str(carbsAdded))
         if carbsAdded > 0:
-            postCarbsToNightscout(str(carbsAdded), 'https://donaldcgm.herokuapp.com/api/v1/treatments', '01964733944759139eab117430f96a5ea6727138')
+            postCarbsToNightscout(str(carbsAdded), nightScoutUrl, api_secret_hashed, token)
         old_day = new_day
 
 
