@@ -1,7 +1,7 @@
 import myfitnesspal
 import time
 from datetime import datetime
-
+from nightscout import postCarbsToNightscout 
 def login(user, pw):
     client = myfitnesspal.Client(user, pw)
     return client
@@ -24,11 +24,15 @@ def compareDays(oldDay, newDay):
     different = False
     snackAdd = False
 
+    for i in range(len(newDay.meals)-1):
+        if len(newDay.meals[i]) > 0:
+            latestMealIndex = i
+
     #Find which meals to compare, and always pay attention to snacks
     for i in range(len(newDay.meals)-1):
-        if len(newDay.meals[i]) > len(oldDay.meals[i]):
-            latestMealIndex = i
-            different = True
+        if i >= latestMealIndex:
+            if len(newDay.meals[i]) > len(oldDay.meals[i]):
+                different = True
     
     #Checks if new snack was added
     if len(newDay.meals[3]) > len(oldDay.meals[3]):
@@ -48,7 +52,10 @@ def carbDiff(old_day, new_day, mealIndex):
     changedMeal = new_day.meals[mealIndex].totals
     print(oldMeal)
     print(changedMeal)
-    oldCarbs = oldMeal['carbohydrates']
+    if len(oldMeal) > 0:
+        oldCarbs = oldMeal['carbohydrates']
+    else:
+        oldCarbs = 0
     newCarbs = changedMeal['carbohydrates']
     print('old vs new carbs')
     print(oldCarbs, newCarbs)
@@ -58,7 +65,7 @@ def carbDiff(old_day, new_day, mealIndex):
 def main():
 
     user = 'elvinutheman@gmail.com'
-    pw = 'enaxup12'
+    pw = 'testpass'
 
     client = login(user, pw)
 
@@ -86,7 +93,8 @@ def main():
                 carbsAdded += carbDiff(old_day, new_day, 3)
         
         print('Carbs Added: ' + str(carbsAdded))
-
+        if carbsAdded > 0:
+            postCarbsToNightscout(str(carbsAdded), 'https://donaldcgm.herokuapp.com/api/v1/treatments', '01964733944759139eab117430f96a5ea6727138')
         old_day = new_day
 
 
