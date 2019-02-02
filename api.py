@@ -2,13 +2,12 @@ import myfitnesspal
 import time
 from datetime import datetime
 from nightscout import postCarbsToNightscout 
+from pushover import sendText
 from configparser import ConfigParser
 
 # reading config file
 parser = ConfigParser()
 parser.read('configs/config.ini')
-
-
 
 def login(user, pw):
     client = myfitnesspal.Client(user, pw)
@@ -89,7 +88,14 @@ def main():
     old_day = day
     new_day = day
 
+    carbsTotal = 0
+
     while True:
+
+        if carbsTotal > 200:
+            sendText('Eat less carbs yo')
+            carbsTotal = 0
+
         carbsAdded = 0    
         #Wait x seconds
         time.sleep(5)
@@ -108,8 +114,8 @@ def main():
         
         print('Carbs Added: ' + str(carbsAdded))
         if carbsAdded > 0:
+            carbsTotal += carbsAdded
             postCarbsToNightscout(str(carbsAdded), nightScoutUrl, api_secret_hashed, token)
         old_day = new_day
-
 
 main()

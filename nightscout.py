@@ -24,8 +24,3 @@ def postCarbsToNightscout(carbs, url, api_secret_hashed, token):
 
 	response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
 	print(response.text)
-
-#url = "https://donaldcgm.herokuapp.com/api/v1/treatments"
-#token = "python_api-63f7b17540f3f091"
-#api_secret_hashed = "01964733944759139eab117430f96a5ea6727138"
-#postCarbsToNightscout("14", url, api_secret_hashed)
