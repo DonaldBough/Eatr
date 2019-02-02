@@ -15,7 +15,7 @@ def postCarbsToNightscout(carbs, url, api_secret_hashed, token):
 	querystring = {"token":token,"API-SECRET":api_secret_hashed}
 
 	payload = "[{\r\n\t\"carbs\": " + carbs + ",\r\n\t\"created_at\": \"" + nowDate + "T" + nowTime + "Z\",\r\n\t\"duration\": 0,\r\n\t\"enteredBy\": \"\",\r\n\t\"eventType\": \"Carb Correction\",\r\n\t\"reason\": \"\"\r\n}]"
-	print('Payload: ' + payload)
+	#print('Payload: ' + payload)
 	headers = {
 	    'Content-Type': "application/json",
 	    'cache-control': "no-cache",

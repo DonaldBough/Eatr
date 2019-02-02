@@ -46,8 +46,6 @@ def compareDays(oldDay, newDay):
         snackAdd = True
         different = True
 
-    print('Snack Added: ' + str(snackAdd))
-
     return latestMealIndex, different, snackAdd
 
 #Checks difference between 2 days meals at a certain meal index
@@ -57,16 +55,11 @@ def carbDiff(old_day, new_day, mealIndex):
 
     oldMeal = old_day.meals[mealIndex].totals
     changedMeal = new_day.meals[mealIndex].totals
-    print(oldMeal)
-    print(changedMeal)
     if len(oldMeal) > 0:
         oldCarbs = oldMeal['carbohydrates']
     else:
         oldCarbs = 0
     newCarbs = changedMeal['carbohydrates']
-    print('old vs new carbs')
-    print(oldCarbs, newCarbs)
-    print()
     return newCarbs - oldCarbs
 
 def main():
