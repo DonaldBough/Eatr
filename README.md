@@ -23,3 +23,11 @@ In its current form the App looks for you to eat too many carbs and if you do th
 
 * With all of that done, you should be able to now link your Github with the forked and **PRIVATE** repo, make a deployment of the app from your repo to Heroku.
   * ``` heroku logs --app your-eatr-heroku-app-name --tail ``` allows your to track your Heroku app
+
+# Other
+
+Video of us presenting slides:
+https://drive.google.com/open?id=1LaYN1cOwEBmhMLt26bYD4zNu42QSQNd0
+
+Demo Video
+https://drive.google.com/open?id=14EC8oL-VRo5jmJsio3GJGcgz6OtdL0vq
