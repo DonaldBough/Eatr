@@ -1,4 +1,10 @@
 # Eatr
+
+## Presentation and Demo Video:
+[Our Awesome Presentation Slides!](Eatr-Presentation.pdf)
+
+[Demo Video showing how carb entries in My Fitness Pal show up in the diabetes app after we integrate the two](Eatr-Demo-No-Audio.MP4)
+
 As one of our team members is diabetic, it was a pain to manually log food in his diabetes monitor app while it was already being entered in another food tracking app, MyFitness pal. Wouldn't it be great it the two apps were in sync?
 
 Eatr is our addition to the [MyFitnesspal python API](https://github.com/coddingtonbear/python-myfitnesspal) API, and the [diabetes app Nightscout](https://github.com/nightscout/cgm-remote-monitor) by enabling MyFitnesspal foods to be logged into Nightscout as well.
@@ -23,11 +29,6 @@ In its current form the App looks for you to eat too many carbs and if you do th
 
 * With all of that done, you should be able to now link your Github with the forked and **PRIVATE** repo, make a deployment of the app from your repo to Heroku.
   * ``` heroku logs --app your-eatr-heroku-app-name --tail ``` allows your to track your Heroku app
-
-# Other
-
-Video of us presenting slides:
-https://drive.google.com/open?id=1LaYN1cOwEBmhMLt26bYD4zNu42QSQNd0
 
 Demo Video
 https://drive.google.com/open?id=14EC8oL-VRo5jmJsio3GJGcgz6OtdL0vq
