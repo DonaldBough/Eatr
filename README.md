@@ -1,5 +1,6 @@
 # Eatr
-*Update, we won 1st place in the Salesforce wide employee open source hackathon!* 🏆
+*Update, we won 1st place in the Salesforce wide employee open source hackathon!*🏆
+Done by Donald Bough, Kyle Disandro, and Elvin Uthuppan
 
 ## Presentation and Demo Video:
 
