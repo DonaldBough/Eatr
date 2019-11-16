@@ -4,10 +4,11 @@
 *Done by Donald Bough, Kyle Disandro, and Elvin Uthuppan*
 
 ## Presentation and Demo Video:
+[Demo video explaining everything](https://youtu.be/56Bxnw1pUJI)
 
 [Our Awesome Presentation Slides!](Eatr-Presentation.pdf)
 
-[Demo Video showing how carb entries in My Fitness Pal show up in the diabetes app after we integrate the two](Eatr-Demo-No-Audio.MP4)
+## Overview
 
 As one of our team members is diabetic, it was a pain to manually log food in his diabetes monitor app while it was already being entered in another food tracking app, MyFitness pal. Wouldn't it be great it the two apps were in sync?
 
@@ -19,7 +20,7 @@ In the case of Eatr, we don't have access to Nightscout or MyFitnesspal's actual
 
 In its current form the App looks for you to eat too many carbs and if you do that then it sends a notification to your devices to tell you to stop. The idea is that these rules can be modified to push anything and listen to anything. If you want to drink water every 40 minutes, add that rule. And if you drank water at minute 39 and updated it on the `MyFitnesspal`, have the server reset that 40 minute water timer so it doesn't still remind you. The option are limitless.
 
-# Setup
+## Setup
 
 * Download and make an account for `MyFitnesspal`, `Nightscout` (possibly more setup, Donald could you add to this part), `Heroku`, and `Pushover`.
   * General setup for all four of these should be pretty straightforward. 
