@@ -3,10 +3,8 @@
 
 *Done by Donald Bough, Kyle Disandro, and Elvin Uthuppan*
 
-## Presentation and Demo Video:
-[Demo video explaining everything](https://youtu.be/56Bxnw1pUJI)
-
-[Our Awesome Presentation Slides!](Eatr-Presentation.pdf)
+## Quick Explanation:
+[Demo video on YouTube here](https://youtu.be/56Bxnw1pUJI)
 
 ## Overview
 
