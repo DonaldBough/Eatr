@@ -6,6 +6,8 @@
 ## Quick Explanation:
 [Demo video on YouTube here](https://youtu.be/56Bxnw1pUJI)
 
+[Presentation Slides here](Eatr-Presentation.pdf)
+
 ## Overview
 
 As one of our team members is diabetic, it was a pain to manually log food in his diabetes monitor app while it was already being entered in another food tracking app, MyFitness pal. Wouldn't it be great it the two apps were in sync?
